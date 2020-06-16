@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Axit</title>
+</head>
+<body>
+<!--sprite-->
+    <svg  style="display: none;">
+        <symbol id="facebook" viewBox="0 0 511 511.9">
+           <g>
+            <path d="m180 512h-81.992188c-13.695312 0-24.835937-11.140625-24.835937-24.835938v-184.9375h-47.835937c-13.695313 0-24.835938-11.144531-24.835938-24.835937v-79.246094c0-13.695312 11.140625-24.835937 24.835938-24.835937h47.835937v-39.683594c0-39.347656 12.355469-72.824219 35.726563-96.804688 23.476562-24.089843 56.285156-36.820312 94.878906-36.820312l62.53125.101562c13.671875.023438 24.792968 11.164063 24.792968 24.835938v73.578125c0 13.695313-11.136718 24.835937-24.828124 24.835937l-42.101563.015626c-12.839844 0-16.109375 2.574218-16.808594 3.363281-1.152343 1.308593-2.523437 5.007812-2.523437 15.222656v31.351563h58.269531c4.386719 0 8.636719 1.082031 12.289063 3.121093 7.878906 4.402344 12.777343 12.726563 12.777343 21.722657l-.03125 79.246093c0 13.6875-11.140625 24.828125-24.835937 24.828125h-58.46875v184.941406c0 13.695313-11.144532 24.835938-24.839844 24.835938zm-76.8125-30.015625h71.632812v-193.195313c0-9.144531 7.441407-16.582031 16.582032-16.582031h66.726562l.027344-68.882812h-66.757812c-9.140626 0-16.578126-7.4375-16.578126-16.582031v-44.789063c0-11.726563 1.191407-25.0625 10.042969-35.085937 10.695313-12.117188 27.550781-13.515626 39.300781-13.515626l36.921876-.015624v-63.226563l-57.332032-.09375c-62.023437 0-100.566406 39.703125-100.566406 103.609375v53.117188c0 9.140624-7.4375 16.582031-16.578125 16.582031h-56.09375v68.882812h56.09375c9.140625 0 16.578125 7.4375 16.578125 16.582031zm163.0625-451.867187h.003906zm0 0"/>
+            </g>
+        </symbol>
+        <symbol id="instagram" viewBox="0 -47 512.00004 512">
+            <g>
+               <path d="m510.949219 150.5c-1.199219-27.199219-5.597657-45.898438-11.898438-62.101562-6.5-17.199219-16.5-32.597657-29.601562-45.398438-12.800781-13-28.300781-23.101562-45.300781-29.5-16.296876-6.300781-34.898438-10.699219-62.097657-11.898438-27.402343-1.300781-36.101562-1.601562-105.601562-1.601562s-78.199219.300781-105.5 1.5c-27.199219 1.199219-45.898438 5.601562-62.097657 11.898438-17.203124 6.5-32.601562 16.5-45.402343 29.601562-13 12.800781-23.097657 28.300781-29.5 45.300781-6.300781 16.300781-10.699219 34.898438-11.898438 62.097657-1.300781 27.402343-1.601562 36.101562-1.601562 105.601562s.300781 78.199219 1.5 105.5c1.199219 27.199219 5.601562 45.898438 11.902343 62.101562 6.5 17.199219 16.597657 32.597657 29.597657 45.398438 12.800781 13 28.300781 23.101562 45.300781 29.5 16.300781 6.300781 34.898438 10.699219 62.101562 11.898438 27.296876 1.203124 36 1.5 105.5 1.5s78.199219-.296876 105.5-1.5c27.199219-1.199219 45.898438-5.597657 62.097657-11.898438 34.402343-13.300781 61.601562-40.5 74.902343-74.898438 6.296876-16.300781 10.699219-34.902343 11.898438-62.101562 1.199219-27.300781 1.5-36 1.5-105.5s-.101562-78.199219-1.300781-105.5zm-46.097657 209c-1.101562 25-5.300781 38.5-8.800781 47.5-8.601562 22.300781-26.300781 40-48.601562 48.601562-9 3.5-22.597657 7.699219-47.5 8.796876-27 1.203124-35.097657 1.5-103.398438 1.5s-76.5-.296876-103.402343-1.5c-25-1.097657-38.5-5.296876-47.5-8.796876-11.097657-4.101562-21.199219-10.601562-29.398438-19.101562-8.5-8.300781-15-18.300781-19.101562-29.398438-3.5-9-7.699219-22.601562-8.796876-47.5-1.203124-27-1.5-35.101562-1.5-103.402343s.296876-76.5 1.5-103.398438c1.097657-25 5.296876-38.5 8.796876-47.5 4.101562-11.101562 10.601562-21.199219 19.203124-29.402343 8.296876-8.5 18.296876-15 29.398438-19.097657 9-3.5 22.601562-7.699219 47.5-8.800781 27-1.199219 35.101562-1.5 103.398438-1.5 68.402343 0 76.5.300781 103.402343 1.5 25 1.101562 38.5 5.300781 47.5 8.800781 11.097657 4.097657 21.199219 10.597657 29.398438 19.097657 8.5 8.300781 15 18.300781 19.101562 29.402343 3.5 9 7.699219 22.597657 8.800781 47.5 1.199219 27 1.5 35.097657 1.5 103.398438s-.300781 76.300781-1.5 103.300781zm0 0"/><path d="m256.449219 124.5c-72.597657 0-131.5 58.898438-131.5 131.5s58.902343 131.5 131.5 131.5c72.601562 0 131.5-58.898438 131.5-131.5s-58.898438-131.5-131.5-131.5zm0 216.800781c-47.097657 0-85.300781-38.199219-85.300781-85.300781s38.203124-85.300781 85.300781-85.300781c47.101562 0 85.300781 38.199219 85.300781 85.300781s-38.199219 85.300781-85.300781 85.300781zm0 0"/><path d="m423.851562 119.300781c0 16.953125-13.746093 30.699219-30.703124 30.699219-16.953126 0-30.699219-13.746094-30.699219-30.699219 0-16.957031 13.746093-30.699219 30.699219-30.699219 16.957031 0 30.703124 13.742188 30.703124 30.699219zm0 0"/>
+            </g>
+        </symbol>
+        <symbol id="twitter" viewBox="0 -47 512.00004 512">
+            <g>
+                <path d="m512 55.964844c-32.207031 1.484375-31.503906 1.363281-35.144531 1.667968l19.074219-54.472656s-59.539063 21.902344-74.632813 25.820313c-39.640625-35.628907-98.5625-37.203125-140.6875-11.3125-34.496094 21.207031-53.011719 57.625-46.835937 100.191406-67.136719-9.316406-123.703126-41.140625-168.363282-94.789063l-14.125-16.964843-10.554687 19.382812c-13.339844 24.492188-17.769531 52.496094-12.476563 78.851563 2.171875 10.8125 5.863282 21.125 10.976563 30.78125l-12.117188-4.695313-1.4375 20.246094c-1.457031 20.566406 5.390625 44.574219 18.320313 64.214844 3.640625 5.53125 8.328125 11.605469 14.269531 17.597656l-6.261719-.960937 7.640625 23.199218c10.042969 30.480469 30.902344 54.0625 57.972657 67.171875-27.035157 11.472657-48.875 18.792969-84.773438 30.601563l-32.84375 10.796875 30.335938 16.585937c11.566406 6.324219 52.4375 27.445313 92.820312 33.78125 89.765625 14.078125 190.832031 2.613282 258.871094-58.664062 57.308594-51.613282 76.113281-125.03125 72.207031-201.433594-.589844-11.566406 2.578125-22.605469 8.921875-31.078125 12.707031-16.964844 48.765625-66.40625 48.84375-66.519531zm-72.832031 48.550781c-10.535157 14.066406-15.8125 32.03125-14.867188 50.578125 3.941407 77.066406-17.027343 136.832031-62.328125 177.628906-52.917968 47.660156-138.273437 66.367188-234.171875 51.324219-17.367187-2.722656-35.316406-8.820313-50.171875-14.910156 30.097656-10.355469 53.339844-19.585938 90.875-37.351563l52.398438-24.800781-57.851563-3.703125c-27.710937-1.773438-50.785156-15.203125-64.96875-37.007812 7.53125-.4375 14.792969-1.65625 22.023438-3.671876l55.175781-15.367187-55.636719-13.625c-27.035156-6.621094-42.445312-22.796875-50.613281-35.203125-5.363281-8.152344-8.867188-16.503906-10.96875-24.203125 5.578125 1.496094 12.082031 2.5625 22.570312 3.601563l51.496094 5.09375-40.800781-31.828126c-29.398437-22.929687-41.179687-57.378906-32.542969-90.496093 91.75 95.164062 199.476563 88.011719 210.320313 90.527343-2.386719-23.183593-2.449219-23.238281-3.074219-25.445312-13.886719-49.089844 16.546875-74.015625 30.273438-82.453125 28.671874-17.621094 74.183593-20.277344 105.707031 8.753906 6.808593 6.265625 16.015625 8.730469 24.632812 6.589844 7.734375-1.921875 14.082031-3.957031 20.296875-6.171875l-12.9375 36.945312 16.515625.011719c-3.117187 4.179688-6.855469 9.183594-11.351562 15.183594zm0 0"/>
+            </g>
+        </symbol>
+        <symbol id="linkedin" viewBox="-21 -35 682.66669 682">
+            <g>
+                <path d="m77.613281-.667969c-46.929687 0-77.613281 30.816407-77.613281 71.320313 0 39.609375 29.769531 71.304687 75.8125 71.304687h.890625c47.847656 0 77.625-31.695312 77.625-71.304687-.894531-40.503906-29.777344-71.320313-76.714844-71.320313zm0 0"/><path d="m8.109375 198.3125h137.195313v412.757812h-137.195313zm0 0"/><path d="m482.054688 188.625c-74.011719 0-123.640626 69.546875-123.640626 69.546875v-59.859375h-137.199218v412.757812h137.191406v-230.5c0-12.339843.894531-24.660156 4.519531-33.484374 9.917969-24.640626 32.488281-50.167969 70.390625-50.167969 49.644532 0 69.5 37.851562 69.5 93.339843v220.8125h137.183594v-236.667968c0-126.78125-67.6875-185.777344-157.945312-185.777344zm0 0"/>
+            </g>
+        </symbol>
+        <symbol id="google" viewBox="0 0 512 512">
+            <g>
+                <path d="m512 256c0-16.084-1.509-32.183-4.497-47.813-1.348-7.075-7.544-12.188-14.736-12.188h-235.767c-8.291 0-15 6.709-15 15v90c0 8.291 6.709 15 15 15h120.967c-7.537 15.258-17.924 28.497-30.121 39.635l84.78 84.78c48.781-46.475 79.374-111.875 79.374-184.414z"/><path d="m256 120c29.429 0 57.422 9.346 80.947 27.041 5.947 4.468 14.341 3.926 19.614-1.392l64.014-64.014c2.974-2.974 4.57-7.061 4.38-11.265s-2.124-8.13-5.347-10.84c-45.805-38.392-103.916-59.53-163.608-59.53-87.849 0-165.458 44.654-211.337 112.452l88.048 88.048c21.006-47.316 68.268-80.5 123.289-80.5z"/><path d="m256 512c57.263 0 109.993-19.2 152.602-51.187l-86.371-86.371c-19.742 11.116-42.306 17.558-66.231 17.558-55.021 0-102.283-33.184-123.289-80.5l-88.048 88.048c45.879 67.798 123.488 112.452 211.337 112.452z"/><path d="m122.184 277.605c-1.149-7.079-2.184-14.208-2.184-21.605s1.035-14.526 2.184-21.605l-94.124-94.124c-17.808 34.78-28.06 74.045-28.06 115.729s10.252 80.949 28.061 115.728z"/>
+            </g>
+        </symbol>
+        <symbol id="Capa_1" viewBox="0 0 432.4 432.4" style="enable-background:new 0 0 432.4 432.4;" xml:space="preserve">
+            <g>
+                <path  d="M216.529,93.2c-61.2,0-111.2,50-111.2,111.2c0,32,14,62.8,37.6,83.6c17.6,17.6,16,55.2,15.6,55.6
+                c0,2,0.4,3.6,2,5.2c1.2,1.2,3.2,2,4.8,2h102c2,0,3.6-0.8,4.8-2c1.2-1.2,2-3.2,2-5.2c0-0.4-2-38,15.6-55.6
+                c0.4-0.4,0.8-0.8,1.2-1.2c23.2-21.2,36.8-51.2,36.8-82.4C327.729,143.2,277.729,93.2,216.529,93.2z M280.529,277.6
+                c-0.4,0.4-1.2,1.2-1.2,1.6c-15.6,16.8-18.4,44.4-18.8,57.6h-88.4c-0.4-13.2-3.2-42-20-59.2c-21.2-18.4-33.6-45.2-33.6-73.6
+                c0-54,43.6-97.6,97.6-97.6s97.6,43.6,97.6,97.6C313.729,232.4,301.729,259.2,280.529,277.6z"/>
+            <path d="M216.129,121.6c-3.6,0-6.8,3.2-6.8,6.8c0,3.6,3.2,6.8,6.8,6.8c40.4,0,72.8,32.8,72.8,72.8
+                c0,3.6,3.2,6.8,6.8,6.8c3.6,0,6.8-3.2,6.8-6.8C302.929,160.4,264.129,121.6,216.129,121.6z"/>
+            <path d="M260.529,358.4h-88.8c-9.2,0-16.8,7.6-16.8,16.8s7.6,16.8,16.8,16.8h88.4
+                c9.6-0.4,17.2-7.6,17.2-16.8C277.329,366,269.729,358.4,260.529,358.4z M260.529,378h-88.8c-1.6,0-3.2-1.2-3.2-3.2
+                s1.2-3.2,3.2-3.2h88.4c1.6,0,3.2,1.2,3.2,3.2S262.129,378,260.529,378z"/>
+            <path d="M247.329,398.8h-62.4c-9.2,0-16.8,7.6-16.8,16.8s7.6,16.8,16.8,16.8h62.4
+                c9.2,0,16.8-7.6,16.8-16.8C264.129,406,256.529,398.8,247.329,398.8z M247.329,418.4h-62.4c-1.6,0-3.2-1.2-3.2-3.2
+                s1.2-3.2,3.2-3.2h62.4c1.6,0,3.2,1.2,3.2,3.2S248.929,418.4,247.329,418.4z"/>
+            <path d="M216.129,60c4,0,6.8-3.2,6.8-6.8V6.8c0-3.6-3.2-6.8-6.8-6.8c-3.6,0-6.8,3.2-6.8,6.8v46.4
+                C209.329,56.8,212.529,60,216.129,60z"/>
+            <path d="M329.329,34.4c-3.2-2.4-7.2-1.2-9.2,1.6l-25.6,38.4c-2.4,3.2-1.6,7.6,1.6,9.6
+                c1.2,0.8,2.4,1.2,3.6,1.2c2.4,0,4.4-1.2,5.6-3.2l25.6-38.4C333.329,40.8,332.529,36.4,329.329,34.4z"/>
+            <path d="M134.929,83.6c1.2,0,2.4-0.4,3.6-1.2c3.2-2,4-6.4,2-9.6l-24.8-38.8c-2-3.2-6.4-4-9.6-2
+                s-4,6.4-2,9.6l24.8,38.8C130.529,82.8,132.529,83.6,134.929,83.6z"/>
+            <path d="M86.529,126l-40.4-22c-3.2-1.6-7.6-0.4-9.2,2.8c-2,3.2-0.8,7.6,2.8,9.2l40.4,22
+                c1.2,0.4,2,0.8,3.2,0.8c2.4,0,4.8-1.2,6-3.6C90.929,132,89.729,127.6,86.529,126z"/>
+            <path d="M395.729,106.8c-1.6-3.2-6-4.4-9.2-2.8l-40.8,22c-3.2,1.6-4.4,6-2.8,9.2c1.2,2.4,3.6,3.6,6,3.6
+                c1.2,0,2.4-0.4,3.2-0.8l40.8-22C396.129,114.4,397.329,110,395.729,106.8z"/>
+            </g>
+        </symbol>
+        <symbol id="flash" viewBox="-91 0 511 511.99948">
+            <g>
+                <path d="m315.5 211h-124.214844l107.253906-188.585938c2.640626-4.640624 2.609376-10.339843-.074218-14.957031-2.683594-4.617187-7.625-7.457031-12.964844-7.457031h-180c-6.460938 0-12.199219 4.140625-14.234375 10.273438l-90 270.996093c-1.519531 4.574219-.75 9.597657 2.070313 13.507813 2.820312 3.90625 7.34375 6.222656 12.164062 6.222656h127.292969l-81.089844 190.113281c-2.886719 6.769531-.441406 14.628907 5.777344 18.5625 6.21875 3.933594 14.371093 2.773438 19.25-2.730469l240-271c8.546875-9.65625 1.679687-24.945312-11.230469-24.945312zm-189.921875 206.832031 53.71875-125.945312c4.210937-9.875-3.039063-20.886719-13.796875-20.886719h-129.214844l80.039063-241h143.386719l-107.25 188.582031c-5.671876 9.972657 1.535156 22.417969 13.039062 22.417969h116.679688zm0 0"/>
+            </g>
+        </symbol>
+        <symbol id="keyboard" viewBox="0 0 512 512">
+            <g>
+                <path d="m446 391v-120c0-5.522-4.477-10-10-10h-360c-5.523 0-10 4.478-10 10v120c0 5.522 4.477 10 10 10h360c5.523 0 10-4.478 10-10zm-240-110h40v40h-40zm-60 0h40v40h-40zm-20 100h-40v-40h40zm0-60h-40v-40h40zm180 60h-160v-40h160zm0-60h-40v-40h40zm60 60h-40v-40h40zm0-60h-40v-40h40zm60 60h-40v-40h40zm0-60h-40v-40h40z"/><path d="m502 201h-236v-20c0-11.028 8.972-20 20-20h60c22.097 0 40-17.898 40-40 0-22.056-17.944-40-40-40h-180c-11.028 0-20-8.972-20-20 0-5.522-4.477-10-10-10s-10 4.478-10 10c0 22.056 17.944 40 40 40h180c11.028 0 20 8.972 20 20 0 11.045-8.954 20-20 20h-60c-22.056 0-40 17.944-40 40v20h-236c-5.523 0-10 4.478-10 10v240c0 5.522 4.477 10 10 10h201c5.523 0 10-4.478 10-10s-4.477-10-10-10h-191v-220h472v220h-191c-5.523 0-10 4.478-10 10s4.477 10 10 10h201c5.523 0 10-4.478 10-10v-240c0-5.523-4.477-10-10-10z"/><circle cx="256" cy="451" r="10"/>
+            </g>
+        </symbol>
+    </svg>
+
+<!--   header-->
+    <header class="header">
+        <div class="container">
+            <div class="heder__inner">
+                <div class="header__logo">
+                    <img class="logo" src="img/Logo@1X.png" alt="">
+                </div>
+                <nav class="nav">
+                    <a class="nav__link" href="#">Features</a>
+                    <a class="nav__link" href="#">About</a>
+                    <a class="nav__link" href="#">Pricing</a>
+                    <a class="nav__link" href="#">Reviews</a>
+                    <a class="nav__link" href="#">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header> <!--/////////  header-->
+<!--intro/////////////-->
+<div class="intro">
+    <div class="container">
+       <div class="intro__container">
+           <div class="intro__inner">
+               <div class="intro__logo">
+                   <img class="intro__img" src="img/inner_logo.png" alt="">
+               </div>
+            <div class="intro__title">
+                <h2>MODERN AXURE TEMPLATE FOR BEAUTIFUL PROTOTYPES</h2>
+            </div>
+            <div class="intro__text">
+                <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+                euismod bibendum laoreet. Proin gravida dolor sit amet lacus
+                accumsan et viverra justo commodo.</h3>
+            </div>
+            <a class="btn__intro" href="#">Download</a>
+           </div>
+           <div class="intro__registration">
+               <form class="intro__form-1">
+                   <div class="intro__field">
+                       <p class="intro__try">Try You <span class="intro__color">FREE</span> Trial Today</p>
+                   </div>
+                   <div class="intro__field">
+                       <input class="intro__input" type="text" name="login" placeholder="Name">
+                   </div>
+                   <div class="intro__field">
+                       <input class="intro__input" type="password" name="password" placeholder="Email">
+                   </div>
+                   <div class="intro__field">
+                       <input class="intro__input" type="password" name="password" placeholder="Password">
+                   </div>
+                   <div class="intro__submit">
+                       <button class="intro__buutton" type="submit" name="Get Started">Get Started
+                       </button>
+                   </div>
+               </form>
+           </div>
+        </div>
+    </div>
+</div> <!--/////////////intro-->
+<!--social-->
+<div class="social">
+    <div class="container">
+        <div class="social__block">
+            <div class="social__media">
+                <div class="social__title">Social Media</div>
+                <div class="social__text">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Aenean euismod bibendum laoreet.</p>
+                </div>
+            </div>
+            <div class="social__networks">
+                <a class="social__item" href="#" target="_blank">
+                    <svg class="social__icon">
+                        <use xlink:href="#facebook"> </use>
+                    </svg>
+                </a>
+                <a class="social__item" href="#" target="_blank">
+                    <svg class="social__icon">
+                        <use xlink:href="#instagram"></use>
+                    </svg>
+                </a>
+                <a class="social__item" href="#" target="_blank">
+                    <svg class="social__icon">
+                        <use xlink:href="#twitter"></use>
+                    </svg>
+                </a>
+                <a class="social__item" href="#" target="_blank">
+                    <svg class="social__icon">
+                        <use xlink:href="#linkedin"></use>
+                    </svg>
+                </a>
+                <a class="social__item" href="#" target="_blank">
+                    <svg class="social__icon">
+                        <use xlink:href="#google"></use>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</div><!--/////////social-->
+<!--transitioning-->
+<div class="transitioning">
+    <div class="container">
+       <div class="transitioning__item">
+           <div class="transitioning__tab">
+               <div class="transitioning__1">TAB1</div>
+               <div class="transitioning__2">TAB2</div>
+               <div class="transitioning__3">TAB3</div>
+           </div>
+           <div class="transitioning__description">
+               <div class="transitioning__title">
+                   Tabs with soft transitioning effect.
+               </div>
+               <div class="transitioning__text">
+                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod
+                   bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra
+                   justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque
+                   penatibus et magnis dis parturient montes.
+               </div>
+               <div class="transitioning__text2">
+                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod
+                   bibendum laoreet.
+               </div>
+               <a class="btn" href="#">Download</a>
+           </div>
+           <div class="transitioning__img">
+               <img src="img/transitioning.jpg" alt="">
+           </div>
+       </div>
+    </div>
+</div> <!--/////////transitioning-->
+<!-- section-->
+<div class="section">
+    <div class="container">
+        <div class="section__item">
+            <div class="section__img">
+                <img class="section__pictures" src="img/section.jpg" alt="">
+            </div>
+            <div class="section__description">
+                <div class="section__title">Sub list section</div>
+                <div class="section__subtitle">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+                    euismod bibendum laoreet. Proin gravida dolor sit amet lacus
+                    accumsan et viverra justo commodo.
+                </div>
+                <div class="section__inner">
+                    <div class="section__inner--title">
+                        <div class="section__logo">
+                            <img src="img/logo_title.jpg" alt="">
+                        </div>
+                        <div class="section__title2">Title</div>
+                        <div class="section__suptitle">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Aenean euismod bibendum laoreet.
+                        </div>
+                    </div>
+                    <div class="section__inner--title">
+                        <div class="section__logo">
+                            <img src="img/logo_title.jpg" alt="">
+                        </div>
+                        <div class="section__title2">Title</div>
+                        <div class="section__suptitle">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Aenean euismod bibendum laoreet. Proin gravida dolor
+                            sit amet lacus accumsan et viverra justo commodo.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!--//////// section__item-->
+    </div>
+</div> <!--//////// section-->
+<div class="sections sections__bgc" >
+    <div class="container">
+        <div class="section__item">
+            <div class="section__description">
+                <div class="section__title">Standard Picture Section</div>
+                <div class="section__subtitle">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+                    euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan
+                    et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis
+                    natoque penatibus et magnis dis parturient montes.
+
+                    <p class="section__subtitle2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod
+                    bibendum laoreet.
+                    </p>
+                </div>
+            </div>
+            <div class="section__img">
+                <img class="section__pictures2" src="img/section.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</div><!--//////// section-->
+<!--advantages-->
+<div class="advantages">
+    <div class="container">
+        <div class="axit__title">WHY THIS IS AWESOME</div>
+        <div class="axit__subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+        <div class="advantages__item">
+                <div class="advantages__inner">
+                    <svg class="advantages__img">
+                        <use xlink:href="#Capa_1"></use>
+                    </svg>
+                    <div class="advantages__suptitle">Thoughtful Design</div>
+                    <div class="advantages__text">Lorem ipsum dolor sit amet, consectetur adipiscing
+                    elit. Aenean euismod bibendum laoreet. Proin gravida
+                    dolor sit amet lacus accumsan et viverra.</div>
+                </div>
+                <div class="advantages__inner">
+                    <div class="advantages__img">
+                        <svg class="advantages__img">
+                            <use xlink:href="#flash"></use>
+                        </svg>
+                    </div>
+                    <div class="advantages__suptitle">Well Crafted</div>
+                    <div class="advantages__text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing
+                    elit. Aenean euismod bibendum laoreet. Proin gravida
+                    dolor sit amet lacus accumsan et viverra.
+                    </div>
+                </div>
+                <div class="advantages__inner">
+                    <div class="advantages__img">
+                        <svg class="advantages__img">
+                            <use xlink:href="#keyboard"></use>
+                        </svg>
+                    </div>
+                    <div class="advantages__suptitle">Easy to Customize</div>
+                    <div class="advantages__text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing
+                    elit. Aenean euismod bibendum laoreet. Proin gravida
+                    dolor sit amet lacus accumsan et viverra.
+                    </div>
+                </div>
+        </div>
+    </div>
+
+</div> <!--///////advantages-->
+<!--OPTIONS===========-->
+<div class="options">
+    <div class="container">
+        <div class="axit__title ">PRICING OPTIONS</div>
+        <div class="axit__subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+        <div class="options__item">
+            <div class="options__inner">
+                <h2 class="lvl">Basic</h2>
+                <div class="price">$0</div>
+                <div class="free">Free for Life</div>
+                <div class="conditions">1 GB OF SPACE</div>
+                <div class="conditions">10 GB OF BANDWIDTH</div>
+                <div class="conditions">3 WEBSITES</div>
+                <div class="conditions">BASIC CUSTOMIZATION</div>
+                <div class="conditions">WORDPRESS INTEGRATION</div>
+                <div class="conditions">EMAIL SUPPORT</div>
+            </div>
+            <div class="options__inner">
+                <h2 class="lvl">Professional</h2>
+                <div class="price">$19</div>
+                <div class="free">Monthly Payment</div>
+                <div class="conditions">5 GB OF SPACE</div>
+                <div class="conditions">50 GB OF BANDWIDTH</div>
+                <div class="conditions">12 WEBSITES</div>
+                <div class="conditions">ADVANCED CUSTOMIZATION</div>
+                <div class="conditions">WORDPRESS INTEGRATION</div>
+                <div class="conditions">EMAIL SUPPORT</div>
+
+            </div>
+            <div class="options__inner">
+                <h2 class="lvl">Enterprise</h2>
+                <div class="price">$70</div>
+                <div class="free">Monthly Payment</div>
+                <div class="conditions">UNLIMITED SPACE</div>
+                <div class="conditions">UNLIMITED BANDWIDTH</div>
+                <div class="conditions">100 WEBSITES</div>
+                <div class="conditions">ADVANCED CUSTOMIZATION</div>
+                <div class="conditions">WORDPRESS INTEGRATION</div>
+                <div class="conditions">24/7 CUSTOMER SUPPORT</div>
+
+            </div>
+        </div>
+    </div>
+</div> <!--//////////OPTIONS===========-->
+<!--===================reviews-->
+<div class="reviews">
+    <div class="container">
+        <div class="axit__title">WHAT OUR CUSTOMERS ARE SAYING</div>
+        <div class="axit__subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+        <div class="reviews__item">
+            <div class="reviews__inner">
+                <div class="reviews__text">
+                    <p class="reviews__coment">Lorem ipsum dolor sit amet,
+                    consectetur adipisicing elit. Doloribus
+                    accusamus expedita repellat similique
+                    odio aspernatur ex, architecto eaque
+                    quo suscipit.</p>
+                </div>
+                <div class="reviews__photo">
+                    <img src="img/avatar_-1.jpg" alt="">
+                </div>
+                <div class="reviews__name">Jeremy H.</div>
+                <div class="reviews__profession">Manager</div>
+            </div>
+            <div class="reviews__inner">
+                <div class="reviews__text">
+                    <p class="reviews__coment">Lorem ipsum dolor sit amet,
+                    consectetur adipisicing elit. Doloribus
+                    accusamus expedita repellat similique
+                    odio aspernatur ex, architecto eaque
+                    quo suscipit.</p>
+                </div>
+                <div class="reviews__photo">
+                    <img src="img/avatar_-1.jpg" alt="">
+                </div>
+                <div class="reviews__name">John S.</div>
+                <div class="reviews__profession">Freelancer</div>
+            </div>
+            <div class="reviews__inner">
+                <div class="reviews__text">
+                    <p class="reviews__coment">Lorem ipsum dolor sit amet,
+                    consectetur adipisicing elit. Doloribus
+                    accusamus expedita repellat similique
+                    odio aspernatur ex, architecto eaque
+                    quo suscipit.</p>
+                </div>
+                <div class="reviews__photo">
+                    <img src="img/avatar_-1.jpg" alt="">
+                </div>
+                <div class="reviews__name">Susan W.</div>
+                <div class="reviews__profession">Photographer</div>
+
+            </div>
+        </div>
+    </div>
+</div> <!--/////////////===================reviews-->
+<!--Download==================-->
+<div class="download">
+    <div class="container">
+        <div class="download__title"><h2>STYLISH AXURE DESIGN</h2></div>
+        <div class="download__subtitle"><h3>Use the sections you need, remove the ones you don't.  Create gorgeous prototypes faster than ever!</h3></div>
+        <a class="btn__intro" href="#">Download</a>
+    </div>
+</div> <!--/////////Download==================-->
+<!--contact-->
+<div class="contact">
+    <div class="container">
+        <div class="axit__title">CONTACT US</div>
+        <div class="axit__subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+        <div class="contact__input">
+            <div class="contact__information">
+                <form>
+                    <input class="left" type="text" id="fname" name="name" placeholder="Name">
+                    <input class="left" type="text" id="fname" name="email" placeholder="Email">
+                    <input class="left" type="text" id="fname" name="subject" placeholder="Subject">
+                </form>
+            </div>
+            <div class="contact__message">
+                <form>
+                    <input class="left" type="text" id="message" name="name" placeholder="Message">
+                </form>
+            </div>
+        </div>
+        <a class="btn__intro btn--knopka" href="#">Send Message</a>
+    </div>
+
+</div> <!--///////////////contact-->
+<!--footer-->
+<footer class="footer">
+    <div class="container">
+        <div class="footer__social">
+            <a class="footer__item" href="#" target="_blank">
+                <svg class="footer__icon">
+                    <use xlink:href="#facebook"> </use>
+                </svg>
+            </a>
+            <a class="footer__item" href="#" target="_blank">
+                <svg class="footer__icon">
+                    <use xlink:href="#instagram"></use>
+                </svg>
+            </a>
+            <a class="footer__item" href="#" target="_blank">
+                <svg class="footer__icon">
+                    <use xlink:href="#twitter"></use>
+                </svg>
+            </a>
+            <a class="footer__item" href="#" target="_blank">
+                <svg class="footer__icon">
+                    <use xlink:href="#linkedin"></use>
+                </svg>
+            </a>
+            <a class="footer__item" href="#" target="_blank">
+                <svg class="footer__icon">
+                    <use xlink:href="#google"></use>
+                </svg>
+            </a>
+        </div>
+
+        <div class="footer__title">© 2015 Axure Themes</div>
+    </div>
+</footer><!--////////////footer-->
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
